@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout::head">
+</head>
+<body>
+<div th:replace="layout::div-1('Search results by product name','/product','Back to product list')"></div>
+
+<table id = "products">
+  <thead>
+  <tr>
+    <th>STT</th>
+    <th>Product name</th>
+    <th>Price</th>
+    <th>Description</th>
+    <th>Producer</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="pro,proStat : ${products}">
+    <td th:text="${proStat.count}"></td>
+    <td th:text="${pro.getName()}"></td>
+    <td th:text="${pro.getPrice()}"></td>
+    <td th:text="${pro.getDescription()}"></td>
+    <td th:text="${pro.getProducer()}"></td>
+  </tr>
+  </tbody>
+</table>
+
+<footer th:replace="layout::footer"></footer>
+</body>
+</html>

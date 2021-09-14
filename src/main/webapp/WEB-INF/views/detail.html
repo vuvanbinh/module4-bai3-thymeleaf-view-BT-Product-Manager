@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout::head">
+</head>
+<body>
+<div th:replace="layout::div-1('Product detail','/product','Back to product list')"></div>
+
+<div id="detail">
+  <div class="proDetail">
+    <label>name:</label>
+    <label th:text="${product.name}"></label>
+  </div>
+  <div class="proDetail">
+    <label>Price:</label>
+    <label th:text="${product.price}"></label>
+  </div>
+  <div class="proDetail">
+    <label>Description:</label>
+    <label th:text="${product.description}"></label>
+  </div>
+  <div class="proDetail">
+    <label>Producer:</label>
+    <label th:text="${product.producer}"></label>
+  </div>
+</div>
+
+<footer th:replace="layout::footer"></footer>
+</body>
+</html>
